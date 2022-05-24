@@ -16,8 +16,20 @@ const saveTodos = function(todos) {
 
 // Generate DOM for todo
 const generateTodoDOM = function(todo) {
-    const renderedTodo = document.createElement('p')
-    renderedTodo.textContent = todo.text
+    const renderedTodo = document.createElement('div')
+
+    const checkBoxElement = document.createElement('input')
+    checkBoxElement.setAttribute('type', 'checkbox')
+    renderedTodo.appendChild(checkBoxElement)
+
+    const todoText = document.createElement('span')
+    todoText.textContent = todo.text
+    renderedTodo.appendChild(todoText)
+
+    const removeButton = document.createElement('button')
+    removeButton.textContent = 'x'
+    renderedTodo.appendChild(removeButton)
+
     return renderedTodo
 }
 
